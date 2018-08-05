@@ -27,3 +27,32 @@ function shuffle(array) {
 
     return array;
 };
+
+document.body.onload = startGame();
+
+function startGame() {
+    cards = shuffle(cards);
+
+    for(var i = 0; i < cards.length; i++){
+        deck.innerHTML = "";
+        [].forEach.call(cards, function(item){
+            deck.appendChild(item);
+        });
+        cards[i].classList.remove("show", "open", "match", "disabled");
+    }
+
+    moves = 0;
+    counter.innerHTML = moves;
+
+    for(var i = 0; i < stars.length; i++){
+        stars[i].style.color = "#FFD700";
+        stars[i].style.visiblility = "visible";
+    }
+
+    second = 0;
+    minute = 0;
+    hour = 0;
+    var timer = document.querySelector(".timer");
+    timer.innerHTML = "0 mins 0 secs";
+    clearInterval(interval);
+}
