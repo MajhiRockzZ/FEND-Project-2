@@ -1,6 +1,8 @@
 let card = document.getElementsByClassName("card");
 let cards = [...card]
 
+const deck = document.getElementById("card-deck");
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
