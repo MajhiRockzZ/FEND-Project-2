@@ -10,6 +10,8 @@ const stars = document.querySelectorAll(".fa-star");
 
 let matchedCard = document.getElementsByClassName("match");
 
+let starsList = document.querySelectorAll(".stars li");
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
