@@ -95,3 +95,9 @@ function unmatched(){
         openedCards = [];
     },1100);
 }
+
+function disable(){
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.add('disabled');
+    });
+}
