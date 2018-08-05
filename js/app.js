@@ -6,6 +6,8 @@ const deck = document.getElementById("card-deck");
 let moves = 0;
 let counter = document.querySelector(".moves");
 
+const stars = document.querySelectorAll(".fa-star");
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
