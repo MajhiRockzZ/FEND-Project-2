@@ -8,6 +8,8 @@ let counter = document.querySelector(".moves");
 
 const stars = document.querySelectorAll(".fa-star");
 
+let matchedCard = document.getElementsByClassName("match");
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
