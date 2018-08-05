@@ -3,6 +3,9 @@ let cards = [...card]
 
 const deck = document.getElementById("card-deck");
 
+let moves = 0;
+let counter = document.querySelector(".moves");
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
