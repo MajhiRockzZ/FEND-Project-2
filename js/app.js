@@ -12,6 +12,8 @@ let matchedCard = document.getElementsByClassName("match");
 
 let starsList = document.querySelectorAll(".stars li");
 
+var openedCards = [];
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
