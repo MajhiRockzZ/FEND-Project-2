@@ -110,3 +110,28 @@ function enable(){
         }
     });
 }
+
+function moveCounter(){
+    moves++;
+    counter.innerHTML = moves;
+    if(moves == 1){
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+
+    if (moves > 8 && moves < 12){
+        for(i = 0; i < 3; i++){
+            if(i > 1){
+                stars[i].style.visiblility = "collapse";
+            }
+        }
+    } else if (moves > 13){
+        for(i = 0; i < 3; i++){
+            if(i > 0){
+                stars[i].style.visiblility = "collapse";
+            }
+        }
+    }
+}
