@@ -153,3 +153,20 @@ function startTimer(){
         }
     }, 1000);
 }
+
+function congratulations(){
+    if(matchedCard.length == 16){
+        clearInterval(interval);
+        finalTime = timer.innerHTML;
+
+        modal.classList.add("show");
+
+        var starRating = document.querySelector(".stars").innerHTML;
+
+        document.getElementById("finalMove").innerHTML = moves;
+        document.getElementById("starRating").innerHTML = starRating;
+        document.getElementById("totalTime").innerHTML = finalTime;
+
+        closeModal();
+    };
+}
