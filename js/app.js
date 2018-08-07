@@ -176,7 +176,7 @@ function congratulations(){
 }
 
 function closeModal(){
-    closeicon.addEventListner("click", function(e){
+    closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
         startGame();
     });
@@ -189,7 +189,7 @@ function playAgain(){
 
 for(var i = 0; i < cards.length; i++){
     card = cards[i];
-    card.addEventListner("click", displayCard);
-    card.addEventListner("click", cardOpen);
-    card.addEventListner("click", congratulations);
+    card.addEventListener("click", displayCard);
+    card.addEventListener("click", cardOpen);
+    card.addEventListener("click", congratulations);
 }
