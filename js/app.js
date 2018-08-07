@@ -186,3 +186,10 @@ function playAgain(){
     modal.classList.remove("show");
     startGame();
 }
+
+for(var i = 0; i < cards.length; i++){
+    card = cards[i];
+    card.addEventListner("click", displayCard);
+    card.addEventListner("click", cardOpen);
+    card.addEventListner("click", congratulations);
+}
