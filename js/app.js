@@ -182,3 +182,7 @@ function closeModal(){
     });
 }
 
+function playAgain(){
+    modal.classList.remove("show");
+    startGame();
+}
