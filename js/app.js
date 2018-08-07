@@ -1,3 +1,5 @@
+// Declaring variables
+
 let card = document.getElementsByClassName("card");
 let cards = [...card]
 
@@ -18,6 +20,7 @@ let modal = document.getElementById("popup1");
 
 var openedCards = [];
 
+// Function to shuffle cards
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
@@ -33,8 +36,10 @@ function shuffle(array) {
     return array;
 };
 
+// Run when page is refreshed
 document.body.onload = startGame();
 
+// Start new game function
 function startGame() {
     cards = shuffle(cards);
 
@@ -46,14 +51,17 @@ function startGame() {
         cards[i].classList.remove("show", "open", "match", "disabled");
     }
 
+    // rest moves
     moves = 0;
     counter.innerHTML = moves;
 
+    // reset rating
     for (var i = 0; i < stars.length; i++) {
         stars[i].style.color = "#FFD700";
         stars[i].style.visiblility = "visible";
     }
 
+    // reset timer
     second = 0;
     minute = 0;
     hour = 0;
@@ -62,6 +70,7 @@ function startGame() {
     clearInterval(interval);
 }
 
+// toggle class to display cards
 var displayCard = function () {
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -81,6 +90,7 @@ function cardOpen() {
     }
 };
 
+// When cards match
 function matched() {
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
@@ -89,6 +99,7 @@ function matched() {
     openedCards = [];
 }
 
+// When card don't match
 function unmatched() {
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
@@ -116,6 +127,7 @@ function enable() {
     });
 }
 
+// To count player's moves
 function moveCounter() {
     moves++;
     counter.innerHTML = moves;
@@ -141,9 +153,10 @@ function moveCounter() {
     }
 }
 
+// Game Timer
 var second = 0,
-    minute = 0;
-hour = 0;
+    minute = 0,
+    hour = 0;
 var timer = document.querySelector(".timer");
 var interval;
 
@@ -162,6 +175,7 @@ function startTimer() {
     }, 1000);
 }
 
+// Congo to player
 function congratulations() {
     if (matchedCard.length == 16) {
         clearInterval(interval);
@@ -186,6 +200,7 @@ function closeModal() {
     });
 }
 
+// Function for play again
 function playAgain() {
     modal.classList.remove("show");
     startGame();
