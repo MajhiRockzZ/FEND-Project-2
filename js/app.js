@@ -12,6 +12,10 @@ let matchedCard = document.getElementsByClassName("match");
 
 let starsList = document.querySelectorAll(".stars li");
 
+let closeicon = document.querySelector(".close");
+
+let modal = document.getElementById("popup1");
+
 var openedCards = [];
 
 function shuffle(array) {
@@ -170,3 +174,11 @@ function congratulations(){
         closeModal();
     };
 }
+
+function closeModal(){
+    closeicon.addEventListner("click", function(e){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+
